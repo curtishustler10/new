@@ -1327,108 +1327,40 @@ svg {
   transform: translateX(0);
 }
 
-/* Projects Carousel Styles */
-.projects-carousel-wrapper {
-  position: relative;
+/* Swiper Center Mode Customization */
+.projects-swiper {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-.projects-carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 2rem;
   padding: 2rem 0;
-  width: 100%;
 }
-.project-card {
-  min-width: 320px;
-  max-width: 400px;
-  flex: 0 0 33.333%;
-  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
-}
-.carousel-arrow {
-  background: rgba(30,41,59,0.8);
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
+.projects-swiper .swiper-slide {
   display: flex;
-  align-items: center;
   justify-content: center;
-  cursor: pointer;
-  z-index: 2;
-  transition: background 0.2s;
-}
-.carousel-arrow:hover {
-  background: #10b981;
-  color: #fff;
-}
-.carousel-arrow.left {
-  margin-right: 1rem;
-}
-.carousel-arrow.right {
-  margin-left: 1rem;
-}
-@media (max-width: 900px) {
-  .project-card {
-    flex: 0 0 50%;
-    min-width: 280px;
-  }
-}
-@media (max-width: 640px) {
-  .projects-carousel {
-    gap: 1rem;
-    padding: 1rem 0;
-  }
-  .project-card {
-    flex: 0 0 100%;
-    min-width: 90vw;
-    max-width: 95vw;
-  }
-  .carousel-arrow {
-    font-size: 1.5rem;
-    width: 36px;
-    height: 36px;
-  }
-}
-
-/* Center mode for carousel */
-.projects-carousel {
-  scroll-snap-type: x mandatory;
-}
-.project-card {
-  scroll-snap-align: center;
+  align-items: stretch;
   transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s;
-  transform: scale(1);
-  z-index: 1;
-}
-.project-card.active {
-  transform: scale(1.2);
-  z-index: 2;
-  box-shadow: 0 8px 32px rgba(16,185,129,0.15);
-}
-.project-card:not(.active) {
   opacity: 0.7;
 }
+.projects-swiper .swiper-slide-active {
+  transform: scale(1.15);
+  z-index: 2;
+  opacity: 1;
+  box-shadow: 0 8px 32px rgba(16,185,129,0.15);
+}
+.projects-swiper .project-card {
+  min-width: 320px;
+  max-width: 400px;
+  width: 100%;
+}
 @media (max-width: 900px) {
-  .project-card {
-    flex: 0 0 50%;
+  .projects-swiper .project-card {
     min-width: 280px;
   }
 }
 @media (max-width: 640px) {
-  .project-card {
-    flex: 0 0 100%;
+  .projects-swiper .swiper-slide-active {
+    transform: scale(1.07);
+  }
+  .projects-swiper .project-card {
     min-width: 90vw;
     max-width: 95vw;
-  }
-  .project-card.active {
-    transform: scale(1.1);
   }
 }
