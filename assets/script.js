@@ -235,3 +235,54 @@ const debouncedScroll = debounce(() => {
 }, 10)
 
 window.addEventListener("scroll", debouncedScroll)
+
+// Projects Carousel Interactivity
+const carousel = document.querySelector('.projects-carousel');
+const leftArrow = document.querySelector('.carousel-arrow.left');
+const rightArrow = document.querySelector('.carousel-arrow.right');
+
+function getCardWidth() {
+  if (!carousel) return 0;
+  const card = carousel.querySelector('.project-card');
+  if (!card) return 0;
+  const style = window.getComputedStyle(card);
+  const margin = parseFloat(style.marginRight) + parseFloat(style.marginLeft);
+  return card.offsetWidth + margin;
+}
+
+function scrollCarousel(direction) {
+  const cardWidth = getCardWidth();
+  if (direction === 'left') {
+    carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+  } else {
+    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+  }
+}
+
+if (leftArrow && rightArrow && carousel) {
+  leftArrow.addEventListener('click', () => scrollCarousel('left'));
+  rightArrow.addEventListener('click', () => scrollCarousel('right'));
+}
+
+// Optional: swipe support for mobile
+enableSwipe(carousel);
+
+function enableSwipe(element) {
+  let startX = 0;
+  let isDown = false;
+
+  element.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].clientX;
+  });
+  element.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const x = e.touches[0].clientX;
+    const diff = startX - x;
+    element.scrollLeft += diff;
+    startX = x;
+  });
+  element.addEventListener('touchend', () => {
+    isDown = false;
+  });
+}
