@@ -111,7 +111,31 @@ document.addEventListener("DOMContentLoaded", () => {
     card.style.animationDelay = `${0.8 + index * 0.2}s`
     observer.observe(card)
   })
-})
+
+  // Flip-in for mockups
+  const mockups = document.querySelectorAll('.mockup');
+  mockups.forEach((mockup, index) => {
+    observer.observe(mockup);
+  });
+});
+
+// Extend observer callback to handle .mockup flip-in
+const originalObserverCallback = observer.callback;
+observer.disconnect();
+observer.callback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animated");
+      if (entry.target.classList.contains("mockup")) {
+        entry.target.classList.add("flip-in");
+      }
+    }
+  });
+};
+observer.observe = IntersectionObserver.prototype.observe.bind(observer);
+// Re-observe all previous elements
+const allObserved = document.querySelectorAll('.animate-on-scroll, .mockup');
+allObserved.forEach(el => observer.observe(el));
 
 // Button hover effects
 document.querySelectorAll(".btn").forEach((btn) => {
