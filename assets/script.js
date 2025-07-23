@@ -236,152 +236,32 @@ const debouncedScroll = debounce(() => {
 
 window.addEventListener("scroll", debouncedScroll)
 
-// Projects Carousel Interactivity
-const carousel = document.querySelector('.projects-carousel');
-const leftArrow = document.querySelector('.carousel-arrow.left');
-const rightArrow = document.querySelector('.carousel-arrow.right');
-
-function getCardWidth() {
-  if (!carousel) return 0;
-  const card = carousel.querySelector('.project-card');
-  if (!card) return 0;
-  const style = window.getComputedStyle(card);
-  const margin = parseFloat(style.marginRight) + parseFloat(style.marginLeft);
-  return card.offsetWidth + margin;
-}
-
-function scrollCarousel(direction) {
-  const cardWidth = getCardWidth();
-  if (direction === 'left') {
-    carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-  } else {
-    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
-  }
-}
-
-if (leftArrow && rightArrow && carousel) {
-  leftArrow.addEventListener('click', () => scrollCarousel('left'));
-  rightArrow.addEventListener('click', () => scrollCarousel('right'));
-}
-
-// Optional: swipe support for mobile
-enableSwipe(carousel);
-
-function enableSwipe(element) {
-  let startX = 0;
-  let isDown = false;
-
-  element.addEventListener('touchstart', (e) => {
-    isDown = true;
-    startX = e.touches[0].clientX;
-  });
-  element.addEventListener('touchmove', (e) => {
-    if (!isDown) return;
-    const x = e.touches[0].clientX;
-    const diff = startX - x;
-    element.scrollLeft += diff;
-    startX = x;
-  });
-  element.addEventListener('touchend', () => {
-    isDown = false;
-  });
-}
-
-// --- Centered Carousel Logic ---
-function updateActiveCard() {
-  if (!carousel) return;
-  const cards = Array.from(carousel.querySelectorAll('.project-card'));
-  const carouselRect = carousel.getBoundingClientRect();
-  let minDiff = Infinity;
-  let activeIdx = 0;
-  cards.forEach((card, idx) => {
-    const cardRect = card.getBoundingClientRect();
-    const cardCenter = cardRect.left + cardRect.width / 2;
-    const carouselCenter = carouselRect.left + carouselRect.width / 2;
-    const diff = Math.abs(carouselCenter - cardCenter);
-    if (diff < minDiff) {
-      minDiff = diff;
-      activeIdx = idx;
-    }
-  });
-  cards.forEach((card, idx) => {
-    card.classList.toggle('active', idx === activeIdx);
-  });
-  return activeIdx;
-}
-
-function scrollToCard(idx) {
-  const cards = Array.from(carousel.querySelectorAll('.project-card'));
-  if (!cards[idx]) return;
-  const card = cards[idx];
-  const carouselRect = carousel.getBoundingClientRect();
-  const cardRect = card.getBoundingClientRect();
-  const carouselCenter = carouselRect.left + carouselRect.width / 2;
-  const cardCenter = cardRect.left + cardRect.width / 2;
-  const scrollDiff = cardCenter - carouselCenter;
-  carousel.scrollBy({ left: scrollDiff, behavior: 'smooth' });
-}
-
-// Update active card on scroll
-if (carousel) {
-  carousel.addEventListener('scroll', () => {
-    window.requestAnimationFrame(updateActiveCard);
-  });
-  // Initial update
-  window.addEventListener('load', updateActiveCard);
-  window.addEventListener('resize', updateActiveCard);
-}
-
-// Arrow navigation: scroll to next/prev card and center it
-if (leftArrow && rightArrow && carousel) {
-  leftArrow.addEventListener('click', () => {
-    const cards = Array.from(carousel.querySelectorAll('.project-card'));
-    let activeIdx = updateActiveCard();
-    if (activeIdx > 0) {
-      scrollToCard(activeIdx - 1);
-    }
-  });
-  rightArrow.addEventListener('click', () => {
-    const cards = Array.from(carousel.querySelectorAll('.project-card'));
-    let activeIdx = updateActiveCard();
-    if (activeIdx < cards.length - 1) {
-      scrollToCard(activeIdx + 1);
-    }
-  });
-}
-
-// Swipe support: snap to nearest card on touch end
-function enableSwipeSnap(element) {
-  let startX = 0;
-  let isDown = false;
-  element.addEventListener('touchstart', (e) => {
-    isDown = true;
-    startX = e.touches[0].clientX;
-  });
-  element.addEventListener('touchend', () => {
-    isDown = false;
-    // Snap to nearest card
-    const cards = Array.from(element.querySelectorAll('.project-card'));
-    let minDiff = Infinity;
-    let activeIdx = 0;
-    const carouselRect = element.getBoundingClientRect();
-    cards.forEach((card, idx) => {
-      const cardRect = card.getBoundingClientRect();
-      const cardCenter = cardRect.left + cardRect.width / 2;
-      const carouselCenter = carouselRect.left + carouselRect.width / 2;
-      const diff = Math.abs(carouselCenter - cardCenter);
-      if (diff < minDiff) {
-        minDiff = diff;
-        activeIdx = idx;
-      }
-    });
-    scrollToCard(activeIdx);
-  });
-}
-enableSwipeSnap(carousel);
-// Also snap on mouse up (for trackpad)
-if (carousel) {
-  carousel.addEventListener('mouseup', () => {
-    setTimeout(() => scrollToCard(updateActiveCard()), 100);
-  });
-}
+// Swiper.js initialization for Projects Carousel
+const projectsSwiper = new Swiper('.projects-swiper', {
+  slidesPerView: 3,
+  spaceBetween: 32,
+  centeredSlides: true,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 12,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 24,
+    },
+    900: {
+      slidesPerView: 3,
+      spaceBetween: 32,
+    },
+  },
+});
