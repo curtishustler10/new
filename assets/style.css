@@ -16,7 +16,10 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
+a{
+  color: white!important;
+    text-decoration: none !important;
+}
 /* Container */
 .container {
   max-width: 1200px;
