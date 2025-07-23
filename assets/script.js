@@ -286,3 +286,102 @@ function enableSwipe(element) {
     isDown = false;
   });
 }
+
+// --- Centered Carousel Logic ---
+function updateActiveCard() {
+  if (!carousel) return;
+  const cards = Array.from(carousel.querySelectorAll('.project-card'));
+  const carouselRect = carousel.getBoundingClientRect();
+  let minDiff = Infinity;
+  let activeIdx = 0;
+  cards.forEach((card, idx) => {
+    const cardRect = card.getBoundingClientRect();
+    const cardCenter = cardRect.left + cardRect.width / 2;
+    const carouselCenter = carouselRect.left + carouselRect.width / 2;
+    const diff = Math.abs(carouselCenter - cardCenter);
+    if (diff < minDiff) {
+      minDiff = diff;
+      activeIdx = idx;
+    }
+  });
+  cards.forEach((card, idx) => {
+    card.classList.toggle('active', idx === activeIdx);
+  });
+  return activeIdx;
+}
+
+function scrollToCard(idx) {
+  const cards = Array.from(carousel.querySelectorAll('.project-card'));
+  if (!cards[idx]) return;
+  const card = cards[idx];
+  const carouselRect = carousel.getBoundingClientRect();
+  const cardRect = card.getBoundingClientRect();
+  const carouselCenter = carouselRect.left + carouselRect.width / 2;
+  const cardCenter = cardRect.left + cardRect.width / 2;
+  const scrollDiff = cardCenter - carouselCenter;
+  carousel.scrollBy({ left: scrollDiff, behavior: 'smooth' });
+}
+
+// Update active card on scroll
+if (carousel) {
+  carousel.addEventListener('scroll', () => {
+    window.requestAnimationFrame(updateActiveCard);
+  });
+  // Initial update
+  window.addEventListener('load', updateActiveCard);
+  window.addEventListener('resize', updateActiveCard);
+}
+
+// Arrow navigation: scroll to next/prev card and center it
+if (leftArrow && rightArrow && carousel) {
+  leftArrow.addEventListener('click', () => {
+    const cards = Array.from(carousel.querySelectorAll('.project-card'));
+    let activeIdx = updateActiveCard();
+    if (activeIdx > 0) {
+      scrollToCard(activeIdx - 1);
+    }
+  });
+  rightArrow.addEventListener('click', () => {
+    const cards = Array.from(carousel.querySelectorAll('.project-card'));
+    let activeIdx = updateActiveCard();
+    if (activeIdx < cards.length - 1) {
+      scrollToCard(activeIdx + 1);
+    }
+  });
+}
+
+// Swipe support: snap to nearest card on touch end
+function enableSwipeSnap(element) {
+  let startX = 0;
+  let isDown = false;
+  element.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].clientX;
+  });
+  element.addEventListener('touchend', () => {
+    isDown = false;
+    // Snap to nearest card
+    const cards = Array.from(element.querySelectorAll('.project-card'));
+    let minDiff = Infinity;
+    let activeIdx = 0;
+    const carouselRect = element.getBoundingClientRect();
+    cards.forEach((card, idx) => {
+      const cardRect = card.getBoundingClientRect();
+      const cardCenter = cardRect.left + cardRect.width / 2;
+      const carouselCenter = carouselRect.left + carouselRect.width / 2;
+      const diff = Math.abs(carouselCenter - cardCenter);
+      if (diff < minDiff) {
+        minDiff = diff;
+        activeIdx = idx;
+      }
+    });
+    scrollToCard(activeIdx);
+  });
+}
+enableSwipeSnap(carousel);
+// Also snap on mouse up (for trackpad)
+if (carousel) {
+  carousel.addEventListener('mouseup', () => {
+    setTimeout(() => scrollToCard(updateActiveCard()), 100);
+  });
+}
