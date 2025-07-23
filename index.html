@@ -1,151 +1,784 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fidelis Agency</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fidelis Agency - Premium Web Design & Marketing</title>
+    <meta name="description" content="We guarantee qualified leads with every website we build. Premium web design and growth-driven marketing strategies.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-slate-950 text-white">
-  <!-- Header -->
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
-    <div class="container mx-auto px-4 py-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-2">
-          <div class="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-lg flex items-center justify-center">
-            <span class="text-slate-900 font-bold text-lg">F</span>
-          </div>
-          <span class="text-white font-bold text-xl">Fidelis Agency</span>
-        </div>
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="#services" class="text-slate-300 hover:text-emerald-400 transition-colors duration-200">Services</a>
-          <a href="#projects" class="text-slate-300 hover:text-emerald-400 transition-colors duration-200">Projects</a>
-          <a href="#process" class="text-slate-300 hover:text-emerald-400 transition-colors duration-200">Process</a>
-          <a href="#about" class="text-slate-300 hover:text-emerald-400 transition-colors duration-200">About</a>
-        </nav>
-        <div class="hidden md:flex items-center space-x-4">
-          <button class="text-slate-300 hover:text-white hover:bg-slate-800 px-4 py-2 rounded transition">Contact</button>
-          <button class="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white border-0 px-4 py-2 rounded transition">Book Discovery Call</button>
-        </div>
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-white px-2 py-2 rounded">
-          <span id="mobile-menu-icon">☰</span>
-        </button>
-      </div>
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden mt-4 pb-4 border-t border-slate-800 hidden">
-        <nav class="flex flex-col space-y-4 mt-4">
-          <a href="#services" class="text-slate-300 hover:text-emerald-400 transition-colors duration-200">Services</a>
-          <a href="#projects" class="text-slate-300 hover:text-emerald-400 transition-colors duration-200">Projects</a>
-          <a href="#process" class="text-slate-300 hover:text-emerald-400 transition-colors duration-200">Process</a>
-          <a href="#about" class="text-slate-300 hover:text-emerald-400 transition-colors duration-200">About</a>
-          <div class="flex flex-col space-y-2 pt-4">
-            <button class="text-slate-300 justify-start px-4 py-2 rounded transition">Contact</button>
-            <button class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-2 rounded transition">Book Discovery Call</button>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </header>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span>F</span>
+                    </div>
+                    <span class="logo-text">Fidelis Agency</span>
+                </div>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
-    <!-- Animated Background -->
-    <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_50%)]"></div>
-      <div class="pointer-events-none absolute inset-0 bg-[url('assets/images/placeholder.svg')] opacity-10 mix-blend-overlay"></div>
-    </div>
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-4xl mx-auto text-center">
-        <!-- Badge -->
-        <div class="inline-flex items-center space-x-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full px-4 py-2 mb-8 animate-fade-in-up">
-          <span class="inline-block w-4 h-4 bg-emerald-400 rounded-full"></span>
-          <span class="text-slate-300 text-sm">Premium Web Agency</span>
-        </div>
-        <!-- Main Headline -->
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
-          We Guarantee <span class="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">Qualified Leads</span> With Every Website We Build
-        </h1>
-        <!-- Subtitle -->
-        <p class="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
-          Maximize your digital impact with conversion-optimized websites and growth-driven marketing strategies (SEO, Paid Ads, Social Media).
-        </p>
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up">
-          <button class="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white border-0 px-8 py-4 text-lg rounded group transition">Book Your Free Discovery Call <span class="ml-2">→</span></button>
-          <button class="border border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white px-8 py-4 text-lg rounded bg-transparent transition">Get Your Free Proposal</button>
-        </div>
-        <!-- Stats -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto animate-fade-in-up">
-          <div class="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6">
-            <div class="w-8 h-8 bg-emerald-400 rounded-full mx-auto mb-3"></div>
-            <div class="text-2xl font-bold text-white mb-1">300%</div>
-            <div class="text-slate-400 text-sm">Average ROI Increase</div>
-          </div>
-          <div class="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6">
-            <div class="w-8 h-8 bg-emerald-400 rounded-full mx-auto mb-3"></div>
-            <div class="text-2xl font-bold text-white mb-1">50+</div>
-            <div class="text-slate-400 text-sm">Happy Clients</div>
-          </div>
-          <div class="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6">
-            <div class="w-8 h-8 bg-emerald-400 rounded-full mx-auto mb-3"></div>
-            <div class="text-2xl font-bold text-white mb-1">100+</div>
-            <div class="text-slate-400 text-sm">Projects Delivered</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <div class="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center">
-        <div class="w-1 h-3 bg-emerald-400 rounded-full mt-2"></div>
-      </div>
-    </div>
-  </section>
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#process">Process</a>
+                    <a href="#about">About</a>
+                </nav>
 
-  <!-- Footer -->
-  <footer class="py-16 border-t border-slate-800/50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <!-- Logo -->
-        <div class="mb-8">
-          <div class="flex items-center justify-center space-x-3 mb-4">
-            <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center">
-              <span class="text-slate-900 font-bold text-xl">F</span>
+                <div class="header-buttons">
+                    <button class="btn btn-ghost">Contact</button>
+                    <button class="btn btn-primary">Book Discovery Call</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                </button>
             </div>
-            <span class="text-white font-bold text-2xl">Fidelis Agency</span>
-          </div>
-          <p class="text-slate-400 max-w-md mx-auto">
-            Transforming businesses through premium web design and growth-driven marketing strategies.
-          </p>
-        </div>
-        <!-- Social Links -->
-        <div class="flex justify-center space-x-6 mb-8">
-          <a href="https://www.linkedin.com/in/kornel-gromadka/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-slate-800/50 hover:bg-emerald-500/20 border border-slate-700/50 hover:border-emerald-500/50 rounded-xl flex items-center justify-center transition-all duration-300 group">
-            <span class="w-5 h-5 text-slate-400 group-hover:text-emerald-400 transition-colors">in</span>
-          </a>
-          <a href="https://www.instagram.com/fidelis_agency/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-slate-800/50 hover:bg-emerald-500/20 border border-slate-700/50 hover:border-emerald-500/50 rounded-xl flex items-center justify-center transition-all duration-300 group">
-            <span class="w-5 h-5 text-slate-400 group-hover:text-emerald-400 transition-colors">ig</span>
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=100088596349361" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-slate-800/50 hover:bg-emerald-500/20 border border-slate-700/50 hover:border-emerald-500/50 rounded-xl flex items-center justify-center transition-all duration-300 group">
-            <span class="w-5 h-5 text-slate-400 group-hover:text-emerald-400 transition-colors">fb</span>
-          </a>
-          <a href="https://wa.me/32495771767" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-slate-800/50 hover:bg-emerald-500/20 border border-slate-700/50 hover:border-emerald-500/50 rounded-xl flex items-center justify-center transition-all duration-300 group">
-            <span class="w-5 h-5 text-slate-400 group-hover:text-emerald-400 transition-colors">wa</span>
-          </a>
-        </div>
-        <!-- Copyright -->
-        <div class="pt-8 border-t border-slate-800/50">
-          <p class="text-slate-400">© 2025 Fidelis Agency. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-  <script src="assets/script.js"></script>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#process">Process</a>
+                    <a href="#about">About</a>
+                    <div class="mobile-buttons">
+                        <button class="btn btn-ghost">Contact</button>
+                        <button class="btn btn-primary">Book Discovery Call</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg">
+                <div class="hero-gradient"></div>
+                <div class="hero-radial"></div>
+                <div class="hero-noise"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <!-- Badge -->
+                    <div class="hero-badge">
+                        <svg class="sparkles-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0L9.937 15.5Z"/>
+                        </svg>
+                        <span>Premium Web Agency</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="hero-title">
+                        We Guarantee <span class="gradient-text">Qualified Leads</span> With Every Website We Build
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="hero-subtitle">
+                        Maximize your digital impact with conversion-optimized websites and results-driven marketing strategies.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-lg">
+                            Book Your Free Discovery Call
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-outline btn-lg">
+                            I'm ready to go
+                        </button>
+                    </div>
+        </div>/
+  
+                    <!-- Stats -->
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 3v18h18"/>
+                                <path d="M7 12l4-4 4 4 6-6"/>
+                            </svg>
+                            <div class="stat-value">360%</div>
+                            <div class="stat-label">Average ROI Increase</div>
+                        </div>
+                        <div class="stat-card">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                            <div class="stat-value">50+</div>
+                            <div class="stat-label">Business helped</div>
+                        </div>
+                        <div class="stat-card">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0L9.937 15.5Z"/>
+                            </svg>
+                            <div class="stat-value">200+</div>
+                            <div class="stat-label">Projects Delivered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        Our Latest <span class="gradient-text">Projects</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Discover how we've helped businesses transform their digital presence and drive real results
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=400&width=600" alt="Dakytech">
+                            <div class="project-overlay">
+                                <a href="https://www.dakytech.com/" target="_blank" class="project-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15,3 21,3 21,9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Boku.fr</h3>
+                            <p class="project-description">Modern tech company website with advanced animations and conversion optimization</p>
+                            <div class="project-tags">
+                                <span class="tag">Shopify custom build</span>
+                                <span class="tag">E-commerce</span>
+                                <span class="tag">Conversion Optimization</span>
+                            </div>
+                            <a href="https://www.dakytech.com/" target="_blank" class="project-view">
+                                View Project
+                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=400&width=600" alt="Kamanda2Nis">
+                            <div class="project-overlay">
+                                <a href="https://kamanda2nis.com/" target="_blank" class="project-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15,3 21,3 21,9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Omnilux</h3>
+                            <p class="project-description">E-commerce platform with seamless user experience and payment integration</p>
+                            <div class="project-tags">
+                                <span class="tag">E-commerce</span>
+                                <span class="tag">Conversion Optimization</span>
+                                <span class="tag">Mobile-First</span>
+                            </div>
+                            <a href="https://kamanda2nis.com/" target="_blank" class="project-view">
+                                View Project
+                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=400&width=600" alt="Vladie's Beauty">
+                            <div class="project-overlay">
+                                <a href="https://vladie.com/" target="_blank" class="project-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15,3 21,3 21,9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Baroude et Recttes</h3>
+                            <p class="project-description">Luxury beauty brand website with elegant design and booking system</p>
+                            <div class="project-tags">
+                                <span class="tag">Beauty & Wellness</span>
+                                <span class="tag">Booking System</span>
+                                <span class="tag">Luxury Design</span>
+                            </div>
+                            <a href="https://vladie.com/" target="_blank" class="project-view">
+                                View Project
+                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-cta">
+                    <button class="btn btn-outline btn-lg">
+                        View All Projects
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        What Our <span class="gradient-text">Clients Say</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Don't just take our word for it. Here's what our clients have to say about working with us.
+                    </p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="stars">
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                            </div>
+                            <svg class="quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">"Thanks to Fidelis Agency's acquisition system, we went from €0 to €4,000/month right from our launch. Kornel, the CEO, listens closely and tailors solutions exactly to our needs. Highly recommended! 🙏🏼"</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Dragos Duta" class="author-avatar">
+                            <div class="author-info">
+                                <div class="author-name">Dragos Duta</div>
+                                <div class="author-date">March 1, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="stars">
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                            </div>
+                            <svg class="quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">"Superb experience with Fidelis. They bring ideas and expertise to help you build a high-quality site. Plus, their ongoing marketing support boosts your visibility. Thank you!"</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Valentina Dodaj" class="author-avatar">
+                            <div class="author-info">
+                                <div class="author-name">Valentina Dodaj</div>
+                                <div class="author-date">September 10, 2024</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="stars">
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                            </div>
+                            <svg class="quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">"The team at Fidelis transformed our online presence completely. Our conversion rate increased by 250% within the first month. Exceptional work and ongoing support!"</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Sarah Johnson" class="author-avatar">
+                            <div class="author-info">
+                                <div class="author-name">Sarah Johnson</div>
+                                <div class="author-date">January 15, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trust-indicator">
+                    <div class="stars">
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                        </svg>
+                        <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                        </svg>
+                    </div>
+                    <span>5/5 from 50+ reviews</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section process">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        Our <span class="gradient-text">Process</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        A streamlined approach that ensures your project is delivered on time, on budget, and exceeds expectations
+                    </p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-content">
+                            <div class="step-header">
+                                <div class="step-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="step-info">
+                                    <h3 class="step-title">Discovery Call</h3>
+                                    <span class="step-number">Step 01</span>
+                                </div>
+                            </div>
+                            <p class="step-description">We'll explore your challenges and goals in a free consultation to see how we can help you succeed.</p>
+                        </div>
+                        <div class="step-number-circle">
+                            <span>01</span>
+                        </div>
+                    </div>
+
+                    <div class="process-step reverse">
+                        <div class="step-content">
+                            <div class="step-header">
+                                <div class="step-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="step-info">
+                                    <h3 class="step-title">Vision & strategy</h3>
+                                    <span class="step-number">Step 02</span>
+                                </div>
+                            </div>
+                            <p class="step-description">We create the layout and design of your site, Craft the Message, tone, and target audience, Presentation of ad creatives.</p>
+                        </div>
+                        <div class="step-number-circle">
+                            <span>02</span>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-content">
+                            <div class="step-header">
+                                <div class="step-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                        <line x1="3" y1="6" x2="21" y2="6"/>
+                                        <path d="M16 10a4 4 0 0 1-8 0"/>
+                                    </svg>
+                                </div>
+                                <div class="step-info">
+                                    <h3 class="step-title">Development & Launch</h3>
+                                    <span class="step-number">Step 03</span>
+                                </div>
+                            </div>
+                            <p class="step-description">Once approved, we build, optimize, and rigorously test your site before launch.</p>
+                        </div>
+                        <div class="step-number-circle">
+                            <span>03</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-cta">
+                    <button class="btn btn-primary btn-lg">
+                        I Want a Website
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        Our <span class="gradient-text">Services</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Comprehensive digital solutions designed to grow your business and maximize your online presence
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Conversion-optimised Websites & Landing Pages</h3>
+                        <p class="service-description">Tailored to your brand and goals, we harness no-code and low-code tools for efficiency and flexibility.</p>
+                        <ul class="service-features">
+                            <li>Responsive Design</li>
+                            <li>SEO Optimized</li>
+                            <li>Fast Loading</li>
+                            <li>Conversion Focused</li>
+                        </ul>
+                        <button class="service-link">
+                            Learn More
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 3v18h18"/>
+                                <path d="M7 12l4-4 4 4 6-6"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Social paid ads</h3>
+                        <p class="service-description">From SEO to Google Ads, Meta Ads & TikTok Ads, we craft a strategy that consistently drives revenue and customers.</p>
+                        <ul class="service-features">
+                            <li>Meta Ads</li>
+                            <li>Snapchat Ads</li>
+                            <li>Tiktok Ads</li>
+                            <li>Analytics & Reporting</li>
+                        </ul>
+                        <button class="service-link">
+                            Learn More
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Expert Consulting</h3>
+                        <p class="service-description">Already online? Get personalized e-business advice to overcome challenges and scale your growth.</p>
+                        <ul class="service-features">
+                            <li>Business Analysis</li>
+                            <li>Growth Strategy</li>
+                            <li>Technical Audit</li>
+                            <li>Ongoing Support</li>
+                        </ul>
+                        <button class="service-link">
+                            Learn More
+                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section-cta">
+                    <button class="btn btn-outline btn-lg">
+                        Let's Talk About Your Project
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        Frequently Asked <span class="gradient-text">Questions</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Get answers to the most common questions about our services and process
+                    </p>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How much does a website cost?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Prices range from €1,000 for a single-page showcase site to €10,000 for a multi-language site with dynamic features and custom integrations. We provide a detailed quote tailored to your exact needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is the typical turnaround time?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our custom websites launch in 4–6 weeks, depending on complexity and your feedback cycle.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do I really need a website?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. Over 50% of customers won't trust a business without a modern, mobile-friendly website. It's your 24/7 storefront.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>When should I redesign my site?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>If it's not responsive, outdated (5+ years old), or failing to attract customers, it's time for a fresh look.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why choose Fidelis Agency?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We focus on results, combining powerful marketing strategies with stunning design to turn visitors into customers. We're committed until you're 100% satisfied.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What happens during the discovery call?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We identify your pain points, goals, and determine the best solutions to help you grow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-bg"></div>
+                    <div class="cta-content">
+                        <h2 class="cta-title">
+                            Ready to <span class="gradient-text">Transform</span> Your Business?
+                        </h2>
+                        <p class="cta-subtitle">
+                            Join 50+ successful businesses that have transformed their digital presence with Fidelis Agency
+                        </p>
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary btn-lg">
+                                <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                Book Your Discovery Call
+                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                            <button class="btn btn-outline btn-lg">
+                                <svg class="mail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                Get Free Proposal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <p>
+                        Have a project in mind? Email us at 
+                        <a href="mailto:contact@fidelisagency.be">contact@fidelisagency.be</a>
+                    </p>
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <div class="trust-dot"></div>
+                            <span>Free Consultation</span>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-dot"></div>
+                            <span>No Long-term Contracts</span>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-dot"></div>
+                            <span>100% Satisfaction Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <span>F</span>
+                        </div>
+                        <span class="logo-text">Fidelis Agency</span>
+                    </div>
+                    <p class="footer-description">
+                        Transforming businesses through premium web design and growth-driven marketing strategies.
+                    </p>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/kornel-gromadka/" target="_blank" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/fidelis_agency/" target="_blank" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100088596349361" target="_blank" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/32495771767" target="_blank" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Fidelis Agency. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
