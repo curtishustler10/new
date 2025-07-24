@@ -1634,6 +1634,12 @@ body, html {
   .header-buttons {
     gap: 0.5rem;
   }
+  .scroll-indicator{
+    position:relative;
+    display:block;
+    margin:auto;
+    margin-top:50px.
+  }
 }
 
 /* Responsive hero stats */
