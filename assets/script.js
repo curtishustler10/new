@@ -327,3 +327,34 @@ if (heroStats) {
   }, { threshold: 0.5 });
   statsObserver.observe(heroStats);
 }
+
+// About Us mobile tab logic
+document.addEventListener('DOMContentLoaded', function() {
+  function closeAllAboutTabs() {
+    document.querySelectorAll('.about-tab-content .about-tab').forEach(tab => tab.classList.remove('open'));
+    document.querySelectorAll('.about-dot').forEach(dot => dot.classList.remove('active'));
+  }
+  document.querySelectorAll('.about-dot').forEach(dot => {
+    dot.addEventListener('click', function() {
+      const person = this.getAttribute('data-person');
+      closeAllAboutTabs();
+      document.getElementById('tab-' + person).classList.add('open');
+      this.classList.add('active');
+    });
+  });
+  // Both tabs closed on load
+  closeAllAboutTabs();
+
+  // Timeline animation
+  const aboutSection = document.querySelector('.about-us');
+  if (aboutSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          aboutSection.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(aboutSection);
+  }
+});
