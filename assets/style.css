@@ -1592,6 +1592,15 @@ body, html {
   .projects-swiper .mockup {
     max-width: 95vw;
   }
+  .stat-icon {
+    margin-bottom: 0.1rem!important;;
+  }
+    .scroll-indicator{
+    position:relative;
+    display:block;
+    margin:auto;
+    margin-top:50px!important;
+  }
 }
 @media (max-width: 640px) {
   .projects-swiper .mockup {
@@ -1633,12 +1642,6 @@ body, html {
   }
   .header-buttons {
     gap: 0.5rem;
-  }
-  .scroll-indicator{
-    position:relative;
-    display:block;
-    margin:auto;
-    margin-top:50px!important;
   }
 }
 
