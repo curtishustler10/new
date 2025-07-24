@@ -1230,6 +1230,7 @@ svg {
 
   .mobile-menu-btn {
     display: block;
+    margin: auto 0px;
   }
 
   .mobile-menu.active {
@@ -1591,6 +1592,9 @@ body, html {
 }
 
 @media (max-width: 900px) {
+  section{
+    padding-top: 2rem!important;
+  }
   .projects-swiper .mockup {
     max-width: 95vw;
   }
@@ -1606,6 +1610,26 @@ body, html {
     justify-content: center;
     left: 0!important;;
   }
+  .btn .arrow-icon{
+    margin: auto;
+    padding-left: 0px;
+    display: inline-block;
+    padding-bottom: 2px;
+}
+.btn a{
+  display: flex;
+      padding-top: 2px;
+      justify-content: center;
+      margin: auto;
+}
+.step-info{
+   text-align: left!important;
+    display: flex;
+    flex-direction: column;
+}
+.trust-indicator{
+  margin: 2rem auto;
+}
 }
 @media (max-width: 640px) {
   .projects-swiper .mockup {
