@@ -1495,4 +1495,141 @@ svg {
   }
 }
 
-@import url('https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css');
+/* Responsive header and logo */
+.header-content {
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.logo img {
+  max-width: 160px;
+  width: 40vw;
+  height: auto;
+  display: block;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Responsive mockup for carousel */
+.projects-swiper .mockup {
+  position: relative;
+  width: 100vw;
+  max-width: 400px;
+  min-width: 0;
+  display: block;
+  margin: 0 auto 2rem auto;
+  overflow: visible;
+}
+.projects-swiper .mac-mockup {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.projects-swiper .mac-mockup img#front {
+  position: absolute;
+  top: -38vw;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+.projects-swiper .mac-mockup img#back {
+  position: relative;
+  height: auto;
+  top: 2vw;
+  left: 26vw;
+  width: 50vw;
+  max-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.projects-swiper .phone-mockup {
+  position: absolute;
+  width: 50vw;
+  max-width: 120px;
+  display: inline-block;
+  z-index: 2;
+}
+.projects-swiper .phone-mockup img#front {
+  position: absolute;
+  top: -50vw;
+  left: 50vw;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+.projects-swiper .phone-mockup img#back {
+  position: relative;
+  height: auto;
+  top: -44vw;
+  left: 65vw;
+  width: 18vw;
+  max-width: 60px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Prevent horizontal scroll on mobile */
+body, html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Swiper slide fix for mobile */
+.projects-swiper .swiper-slide {
+  min-width: 0;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .projects-swiper .mockup {
+    max-width: 95vw;
+  }
+}
+@media (max-width: 640px) {
+  .projects-swiper .mockup {
+    width: 98vw;
+    max-width: 98vw;
+  }
+  .projects-swiper .mac-mockup img#front {
+    top: -38vw;
+  }
+  .projects-swiper .phone-mockup {
+    width: 60vw;
+    max-width: 80px;
+  }
+  .projects-swiper .phone-mockup img#front {
+    left: 50vw;
+    top: -50vw;
+    width: 60vw;
+  }
+  .projects-swiper .phone-mockup img#back {
+    left: 65vw;
+    top: -44vw;
+    width: 18vw;
+    max-width: 60px;
+  }
+}
+
+/* Fix for .header and .nav-desktop on small screens */
+@media (max-width: 500px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .nav-desktop {
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+  .header-buttons {
+    gap: 0.5rem;
+  }
+}
