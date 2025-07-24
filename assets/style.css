@@ -1599,7 +1599,7 @@ body, html {
   }
     .scroll-indicator{
     position:relative!important;
-    display:block;
+    display:flex;
     margin:auto;
     margin-top:50px!important;
     align-items: center;
