@@ -1365,6 +1365,30 @@ svg {
   .projects-swiper .project-card {
     min-width: 280px;
   }
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease 0.2s both;
+    max-width: 500px;
+    padding: 40px;
+}
+.section-title{
+  margin:auto;
+  margin-bottom: 1.5rem;
+  max-width: 10ch;
+}
+.cta-title{
+  font-size:2rem
+}
+.header{
+  background: rgba(2, 6, 23, 0.95)!important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(71, 85, 105, 0.5);
+}
+}
 }
 @media (max-width: 640px) {
   .projects-swiper .swiper-slide-active {
@@ -1373,6 +1397,9 @@ svg {
   .projects-swiper .project-card {
     min-width: 90vw;
     max-width: 95vw;
+  }
+  .hero-subtitle{
+    padding: 0px 50px;
   }
 }
 
