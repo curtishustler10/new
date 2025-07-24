@@ -1617,18 +1617,21 @@ body, html {
     padding-bottom: 2px;
 }
 .btn a{
-  display: flex;
-      padding-top: 2px;
-      justify-content: center;
-      margin: auto;
+  display: flex!important;
+      padding-top: 2px!important;
+      justify-content: center!important;
+      margin: auto!important;
 }
 .step-info{
    text-align: left!important;
-    display: flex;
-    flex-direction: column;
+    display: flex!important;
+    flex-direction: column!important;
 }
 .trust-indicator{
-  margin: 2rem auto;
+  margin: 2rem auto!important
+}
+.testimonials-grid{
+  margin-bottom:1rem!important;
 }
 }
 @media (max-width: 640px) {
