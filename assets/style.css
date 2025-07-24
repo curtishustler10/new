@@ -507,7 +507,6 @@ svg {
 
 /* Section Styles */
 .section {
-  padding: 6rem 0;
   position: relative;
 }
 
@@ -1296,6 +1295,9 @@ svg {
 }
 
 @media (min-width: 1024px) {
+  .section {
+    padding: 6rem 0;
+  }
   .step-number-circle {
     display: flex;
   }
@@ -1596,10 +1598,12 @@ body, html {
     margin-bottom: 0.1rem!important;;
   }
     .scroll-indicator{
-    position:relative;
+    position:relative!important;
     display:block;
     margin:auto;
     margin-top:50px!important;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media (max-width: 640px) {
