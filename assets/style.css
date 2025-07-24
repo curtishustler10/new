@@ -1604,6 +1604,7 @@ body, html {
     margin-top:50px!important;
     align-items: center;
     justify-content: center;
+    left: 0!important;;
   }
 }
 @media (max-width: 640px) {
