@@ -1627,6 +1627,7 @@ body, html {
    text-align: left!important;
     display: flex!important;
     flex-direction: column!important;
+    width:75%
 }
 .trust-indicator{
   margin: 2rem auto!important
@@ -1722,6 +1723,9 @@ body, html {
   }
   .stat-label {
     font-size: 0.7rem;
+  }
+  .about-sub{
+    display: blok;
   }
 }
 
