@@ -289,3 +289,41 @@ const projectsSwiper = new Swiper('.projects-swiper', {
     },
   },
 });
+
+// Animated counting for stats
+function animateCount(el, endValue, duration = 1000) {
+  let start = 0;
+  let startTime = null;
+  const suffix = /[+%]$/.test(endValue) ? endValue.match(/[+%]$/)[0] : '';
+  const pureNumber = parseInt(endValue.replace(/[^0-9]/g, ''));
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    const value = Math.floor(progress * pureNumber);
+    el.textContent = value + suffix;
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      el.textContent = pureNumber + suffix;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+// Trigger animation when .hero-stats is visible
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) {
+  const statValues = heroStats.querySelectorAll('.stat-value');
+  let statsAnimated = false;
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !statsAnimated) {
+        statsAnimated = true;
+        statValues.forEach(el => {
+          animateCount(el, el.textContent.trim(), 1200);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+  statsObserver.observe(heroStats);
+}
