@@ -264,15 +264,9 @@ window.addEventListener("scroll", debouncedScroll)
 const projectsSwiper = new Swiper('.projects-swiper', {
   slidesPerView: 3,
   spaceBetween: 32,
-  centeredSlides: true,
-  loop: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
   },
   breakpoints: {
     0: {
@@ -328,6 +322,19 @@ if (heroStats) {
   statsObserver.observe(heroStats);
 }
 
+// Google-style avatar generation for testimonials
+function randomAvatarColor(name) {
+  // Nice palette
+  const colors = [
+    '#F44336', '#E91E63', '#9C27B0', '#3F51B5', '#2196F3', '#009688', '#4CAF50', '#FF9800', '#FF5722', '#607D8B', '#795548', '#00BCD4', '#8BC34A', '#FFC107', '#CDDC39', '#FFB300', '#6D4C41', '#D84315', '#00897B', '#3949AB'
+  ];
+  // Hash the name to pick a color
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  const color = colors[Math.abs(hash) % colors.length];
+  return color;
+}
+
 // About Us mobile tab logic
 document.addEventListener('DOMContentLoaded', function() {
   function closeAllAboutTabs() {
@@ -357,4 +364,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.2 });
     observer.observe(aboutSection);
   }
+
+  document.querySelectorAll('.generated-avatar').forEach(function(el) {
+    const name = el.getAttribute('data-author') || '';
+    const letter = name.trim()[0] ? name.trim()[0].toUpperCase() : '?';
+    el.textContent = letter;
+    el.style.background = randomAvatarColor(name);
+  });
 });

@@ -539,15 +539,40 @@ svg {
 /* Projects Section */
 .projects-grid {
   display: flex;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  flex-wrap: wrap;
   gap: 2rem;
   margin-bottom: 3rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.projects-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.projects-swiper .project-card {
+  box-sizing: border-box;
+  min-width: 320px;
+  max-width: 400px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
 .project-card {
     background: rgba(30, 41, 59, 0.3);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(71, 85, 105, 0.5);
+    border-color: rgba(16, 185, 129, 0.5);
     border-radius: 1rem;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -555,12 +580,10 @@ svg {
     display: flex;
 ;
     flex-direction: column;
-    gap: 50px;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(16, 185, 129, 0.5);
+
 }
 
 .project-image {
@@ -619,6 +642,10 @@ svg {
 
 .project-content {
   padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-title {
@@ -1104,6 +1131,7 @@ svg {
 .mail-icon {
   width: 1.25rem;
   height: 1.25rem;
+  margin-bottom: -0.2rem;
 }
 
 .contact-info {
@@ -1281,6 +1309,9 @@ svg {
   .social-links {
     gap: 1rem;
   }
+  .swiper-button-next:after, .swiper-button-prev:after{
+    font-size: 25px!important ;
+  }
 }
 
 @media (min-width: 640px) {
@@ -1353,9 +1384,10 @@ svg {
   align-items: stretch;
   transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s;
   opacity: 0.7;
+  height: auto;
 }
 .projects-swiper .swiper-slide-active {
-  transform: scale(1.15);
+  transform: scale(1.05) translateY(-10px);
   z-index: 2;
   opacity: 1;
   box-shadow: 0 8px 32px rgba(16,185,129,0.15);
@@ -1364,6 +1396,15 @@ svg {
   min-width: 320px;
   max-width: 400px;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 @media (max-width: 900px) {
   .projects-swiper .project-card {
@@ -1394,189 +1435,82 @@ svg {
 }
 }
 
+@media (max-width: 900px) {
+  .projects-swiper .project-card {
+    min-width: 280px;
+    max-width: 95vw;
+  }
+}
+
 @media (max-width: 640px) {
-  .projects-swiper .swiper-slide-active {
-    transform: scale(1.07);
+  .projects-swiper {
+    margin-left: 8px;
+    margin-right: 8px;
   }
   .projects-swiper .project-card {
     min-width: 90vw;
-    max-width: 95vw;
+    max-width: 98vw;
+    padding: 0.2rem 1rem;
+    padding-top: 1rem;
   }
-  .hero-subtitle{
-    padding: 0px 50px;
+  .project-content {
+    padding: 1rem;
+  }
+  .swiper-button-next, .swiper-button-prev{
+    top: var(--swiper-navigation-top-offset, 47%)!important;
   }
 }
 
 /* Project carousel custom mockup styles */
 .projects-swiper .mockup {
   position: relative;
-  width: 800px;
-  display: inline-block;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 32px #ffffff26;
 }
-.projects-swiper .mac-mockup {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.projects-swiper .mac-mockup img#front {
-  position: absolute;
-  top: -323px;
-  left: 0;
+
+.projects-swiper .mockup img {
   width: 100%;
   height: auto;
-  z-index: 2;
-  pointer-events: none;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
 }
-.projects-swiper .mac-mockup img#back {
-  position: relative;
-  height: auto;
-  top: 2%;
-  left: 26%;
-  width: 50%;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+.projects-swiper .project-card:hover .mockup img {
+  transform: scale(1.02);
 }
-.projects-swiper .phone-mockup {
-  position: absolute;
-  width: 50%;
-  display: inline-block;
-  z-index: 2;
-}
-.projects-swiper .phone-mockup img#front {
-  position: absolute;
-  top: -445px;
-  left: 445px;
-  width: 100%;
-  height: auto;
-  z-index: 2;
-  pointer-events: none;
-}
-.projects-swiper .phone-mockup img#back {
-  position: relative;
-  height: auto;
-  top: -393px;
-  left: 579px;
-  width: 131px;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
+
+/* Responsive adjustments for mockup */
 @media (max-width: 900px) {
   .projects-swiper .mockup {
-    width: 100vw;
-    max-width: 95vw;
-  }
-  .projects-swiper .phone-mockup img#front {
-    left: 55vw;
-    top: -55vw;
-  }
-  .projects-swiper .phone-mockup img#back {
-    left: 70vw;
-    top: -48vw;
-    width: 18vw;
+    max-width: 500px;
+    margin-bottom: 1.5rem;
   }
 }
+
 @media (max-width: 640px) {
   .projects-swiper .mockup {
-    width: 98vw;
-    max-width: 98vw;
+    max-width: 100%;
+    margin-bottom: 1rem;
   }
-  .projects-swiper .mac-mockup img#front {
-    top: -38vw;
-  }
-  .projects-swiper .phone-mockup {
-    width: 60vw;
-  }
-  .projects-swiper .phone-mockup img#front {
-    left: 50vw;
-    top: -50vw;
-    width: 60vw;
-  }
-  .projects-swiper .phone-mockup img#back {
-    left: 65vw;
-    top: -44vw;
-    width: 18vw;
+  
+  .projects-swiper .mockup img {
+    border-radius: 8px;
+    width: 80%;
+    margin: auto;
   }
 }
 
-/* Responsive header and logo */
-.header-content {
-  flex-wrap: wrap;
-  min-width: 0;
-}
-.logo img {
-  max-width: 160px;
-  width: 40vw;
-  height: auto;
-  display: block;
-}
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  box-sizing: border-box;
-}
-
-/* Responsive mockup for carousel */
-.projects-swiper .mockup {
-  position: relative;
-  width: 100vw;
-  max-width: 400px;
-  min-width: 0;
-  display: block;
-  margin: 0 auto 2rem auto;
-  overflow: visible;
-}
-.projects-swiper .mac-mockup {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-.projects-swiper .mac-mockup img#front {
-  position: absolute;
-  top: -38vw;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 2;
-  pointer-events: none;
-}
-.projects-swiper .mac-mockup img#back {
-  position: relative;
-  height: auto;
-  top: 2vw;
-  left: 26vw;
-  width: 50vw;
-  max-width: 200px;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-.projects-swiper .phone-mockup {
-  position: absolute;
-  width: 50vw;
-  max-width: 120px;
-  display: inline-block;
-  z-index: 2;
-}
-.projects-swiper .phone-mockup img#front {
-  position: absolute;
-  top: -50vw;
-  left: 50vw;
-  width: 100%;
-  height: auto;
-  z-index: 2;
-  pointer-events: none;
-}
-.projects-swiper .phone-mockup img#back {
-  position: relative;
-  height: auto;
-  top: -44vw;
-  left: 65vw;
-  width: 18vw;
-  max-width: 60px;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+@media (max-width: 500px) {
+  .projects-swiper .mockup {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 
 /* Prevent horizontal scroll on mobile */
@@ -1596,9 +1530,6 @@ body, html {
   section{
     padding-top: 2rem!important;
   }
-  .projects-swiper .mockup {
-    max-width: 95vw;
-  }
   .stat-icon {
     margin-bottom: 0.1rem!important;;
   }
@@ -1616,6 +1547,7 @@ body, html {
     padding-left: 0px;
     display: inline-block;
     padding-bottom: 2px;
+    margin-bottom: -0.2rem;
 }
 .btn a{
   display: flex!important;
@@ -1635,30 +1567,6 @@ body, html {
 .testimonials-grid{
   margin-bottom:1rem!important;
 }
-}
-@media (max-width: 640px) {
-  .projects-swiper .mockup {
-    width: 98vw;
-    max-width: 98vw;
-  }
-  .projects-swiper .mac-mockup img#front {
-    top: -38vw;
-  }
-  .projects-swiper .phone-mockup {
-    width: 60vw;
-    max-width: 80px;
-  }
-  .projects-swiper .phone-mockup img#front {
-    left: 50vw;
-    top: -50vw;
-    width: 60vw;
-  }
-  .projects-swiper .phone-mockup img#back {
-    left: 65vw;
-    top: -44vw;
-    width: 18vw;
-    max-width: 60px;
-  }
 }
 
 /* Fix for .header and .nav-desktop on small screens */
@@ -1986,5 +1894,24 @@ body, html {
     filter: brightness(1.1) saturate(1.2);
     box-shadow: 0 8px 32px rgba(16,185,129,0.18), 0 2px 12px rgba(2,6,23,0.18);
   }
+}
+
+.generated-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  background: #888;
+  user-select: none;
+  margin-right: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  flex-shrink: 0;
 }
 
