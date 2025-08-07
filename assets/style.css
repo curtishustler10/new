@@ -1647,6 +1647,8 @@ body, html {
   display: flex;
   gap: 3rem;
   align-items: flex-start;
+  padding:40px;
+  
 }
 .about-left {
   flex: 1 1 40%;
@@ -1665,7 +1667,7 @@ body, html {
 }
 .about-summary {
   color: #cbd5e1;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 .about-right {
